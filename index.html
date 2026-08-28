@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HnH Services | Facility Management & Maintenance</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #102A43;
+            --dark: #0B1F33;
+            --orange: #F36C21;
+            --grey: #5B6770;
+            --light-grey: #F4F6F8;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            height: 55px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+
+        /* HERO */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(11, 31, 51, 0.90),
+                    rgba(11, 31, 51, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+            color: #e4e8eb;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #d95712;
+        }
+
+
+        /* GENERAL */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--navy);
+        }
+
+        .section-title p {
+            color: var(--grey);
+            margin-top: 10px;
+        }
+
+
+        /* SERVICES */
+
+        .services {
+            background: var(--light-grey);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 4px;
+            border-bottom: 4px solid var(--orange);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--grey);
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: var(--grey);
+        }
+
+        .about-content strong {
+            color: var(--navy);
+        }
+
+
+        /* TESTIMONIALS */
+
+        .testimonials {
+            background: var(--navy);
+            color: white;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonials .section-title p {
+            color: #cbd5df;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #e8edf2;
+        }
+
+        .testimonial h4 {
+            margin-top: 20px;
+            color: var(--orange);
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: var(--light-grey);
+        }
+
+        .contact-box {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 45px;
+            border-radius: 5px;
+        }
+
+        .contact h2 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+            color: var(--grey);
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--orange);
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: var(--dark);
+            color: #bfc8d0;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 90px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .service-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <img src="logo.png" alt="HnH Services Logo" class="logo">
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <h1>Professional Facility Management & Maintenance</h1>
+
+    <p>
+        Reliable maintenance, facility management and building
+        enhancement solutions for corporates, security estates
+        and commercial properties.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#contact" class="button">Contact Us</a>
+        <a href="#services" class="button">Our Services</a>
+    </div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <h2>What We Do</h2>
+
+        <p>
+            Professional solutions backed by experience and a commitment to quality.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🏢</div>
+
+            <h3>Facility Management</h3>
+
+            <p>
+                Professional facility management solutions designed
+                to keep commercial and corporate properties operating
+                efficiently.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🔧</div>
+
+            <h3>Maintenance</h3>
+
+            <p>
+                Reliable general maintenance and property upkeep
+                for corporate facilities, estates and commercial
+                environments.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🏗️</div>
+
+            <h3>Building Enhancements</h3>
+
+            <p>
+                Practical improvements, upgrades and once-off
+                projects designed to enhance and maintain your
+                property.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+    <div class="section-title">
+
+        <h2>Experience You Can Rely On</h2>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+
+            <strong>HnH Services</strong> specialises in professional
+            maintenance and facility management solutions.
+
+            With extensive experience in corporate facilities, we
+            understand the importance of reliability, quality and
+            professional service.
+
+            From ongoing facility maintenance to once-off building
+            enhancements, we provide practical solutions tailored
+            to your environment.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials" id="testimonials">
+
+    <div class="section-title">
+
+        <h2>What Our Clients Say</h2>
+
+        <p>
+            Building long-term relationships through professional service.
+        </p>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+
+        <!-- Replace these with real testimonials -->
+
+        <div class="testimonial">
+
+            <p>
+                "HnH Services consistently provides professional
+                and reliable maintenance support."
+            </p>
+
+            <h4>— Corporate Client</h4>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <p>
+                "Professional, responsive and committed to delivering
+                quality work."
+            </p>
+
+            <h4>— Property Manager</h4>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <p>
+                "A reliable partner who understands the requirements
+                of managing professional facilities."
+            </p>
+
+            <h4>— Estate Management</h4>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            Looking for a reliable maintenance or facility management partner?
+        </p>
+
+        <br>
+
+        <p><strong>Henk Westermann</strong></p>
+
+        <p>Director</p>
+
+        <a
+            href="mailto:Henk@hnHservices.co.za"
+            class="contact-email"
+        >
+            Henk@hnHservices.co.za
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 HnH Services |
+    Facility Management & Maintenance
+
+</footer>
+
+
+</body>
+</html>
